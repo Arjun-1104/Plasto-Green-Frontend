@@ -1,0 +1,330 @@
+import { mainBannerImages, reactIcons } from "../assets/assets";
+const {mainBannerImage1,mainBannerImage2,mainBannerImage3,mainBannerImage4} = mainBannerImages
+const {TruckIcon, ServiceIcon, BankNoteIcon, ReplaceIcon} = reactIcons;
+
+export const navigation = [
+  { name: 'Home', href: '/', current: true },
+  { name: 'Products', href: '/products', current: false },
+  { name: 'Contact', href: '/contact', current: false },
+  { name: 'About', href: '/about', current: false },
+]
+
+export const customerReviews = [
+  {
+    image: mainBannerImage1,
+    review:
+      "Amazing service! The product quality was beyond expectations and delivery was on time.",
+    name: "John Smith",
+    rating: 5,
+  },
+  {
+    image: mainBannerImage2,
+    review:
+      "Very satisfied with the experience. Customer support was friendly and helpful.",
+    name: "Sophia Johnson",
+    rating: 4,
+  },
+  {
+    image: mainBannerImage3,
+    review:
+      "Good quality overall, but packaging could have been better. Still happy with my order.",
+    name: "Michael Lee",
+    rating: 4,
+  },
+  {
+    image: mainBannerImage4,
+    review:
+      "Absolutely loved it! I will definitely recommend this to my friends and family.",
+    name: "Emma Wilson",
+    rating: 5,
+  },
+
+];
+
+export const preFooterData = [
+  {
+    Image: TruckIcon,
+    name: "Fast Delivery",
+    description:
+      "I was impressed with the quick delivery and the quality of the product. Everything was well-packed and exceeded my expectations.",
+  },
+  {
+    Image: ServiceIcon,
+    name: "Customer Service",
+    description:
+      "The service was professional and smooth from start to finish. Customer support was very responsive and guided me clearly.",
+  },
+  {
+    Image: BankNoteIcon,
+    name: "No Hidden Cost",
+    description:
+      "Very satisfied with my purchase. The product feels premium, and the price was affordable compared to other options online.",
+  },
+  {
+    Image: ReplaceIcon,
+    name: "Replace Guarantee",
+    description:
+      "Excellent experience! The team kept me updated throughout, and I received exactly what I ordered without any issues.",
+  }
+];
+
+export const data = {
+  plywood: {
+    id: 1,
+    title: "Plywood",
+    image: "",
+    items: [
+      {
+        id: 1,
+        title: "Premium Marine Plywood",
+        description: "Water-resistant marine grade plywood ideal for outdoor furniture and boat building.",
+        category: "Plywood",
+        price: 1450,
+        brand: "GreenPly",
+        thickness: "18mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 12,
+        rating: 4.8
+      },
+      {
+        id: 2,
+        title: "Commercial Plywood",
+        description: "High-strength plywood for office furniture, partitions, and paneling.",
+        category: "Plywood",
+        price: 980,
+        brand: "CenturyPly",
+        thickness: "12mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 25,
+        rating: 4.5
+      },
+      {
+        id: 3,
+        title: "Decorative Veneer Plywood",
+        description: "Premium decorative plywood with fine veneer finish for interior designs.",
+        category: "Plywood",
+        price: 1850,
+        brand: "Kitply",
+        thickness: "19mm",
+        dimensions: { width: "7ft", height: "3ft" },
+        stock: 8,
+        rating: 4.9
+      },
+      {
+        id: 4,
+        title: "Shuttering Plywood",
+        description: "Durable shuttering plywood suitable for construction and concrete formwork.",
+        category: "Plywood",
+        price: 1120,
+        brand: "ArchidPly",
+        thickness: "15mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 40,
+        rating: 4.6
+      },
+      {
+        id: 5,
+        title: "Waterproof Plywood",
+        description: "Waterproof plywood perfect for modular kitchens and bathrooms.",
+        category: "Plywood",
+        price: 2100,
+        brand: "Austin Plywood",
+        thickness: "19mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 15,
+        rating: 4.7
+      },
+      {
+        id: 6,
+        title: "Calibrated Plywood",
+        description: "Smooth finish calibrated plywood for uniform thickness and durability.",
+        category: "Plywood",
+        price: 1600,
+        brand: "DuroPly",
+        thickness: "16mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 20,
+        rating: 4.4
+      },
+      {
+        id: 7,
+        title: "Structural Plywood",
+        description: "High-load bearing structural plywood for heavy-duty applications.",
+        category: "Plywood",
+        price: 1900,
+        brand: "GreenPly",
+        thickness: "20mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 10,
+        rating: 4.8
+      },
+      {
+        id: 8,
+        title: "Flexible Plywood",
+        description: "Bendable plywood used for curved furniture and creative designs.",
+        category: "Plywood",
+        price: 1750,
+        brand: "CenturyPly",
+        thickness: "8mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 18,
+        rating: 4.6
+      },
+      {
+        id: 9,
+        title: "Fire Retardant Plywood",
+        description: "Fire-resistant plywood for safety in commercial and residential spaces.",
+        category: "Plywood",
+        price: 2500,
+        brand: "ArchidPly",
+        thickness: "16mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 7,
+        rating: 4.9
+      },
+      {
+        id: 10,
+        title: "Eco-friendly Plywood",
+        description: "Environmentally safe plywood made from sustainable resources.",
+        category: "Plywood",
+        price: 1300,
+        brand: "Kitply",
+        thickness: "12mm",
+        dimensions: { width: "8ft", height: "4ft" },
+        stock: 30,
+        rating: 4.5
+      }
+    ]
+  },
+
+  blockWood: {
+    id: 2,
+    title: "Block Wood Bonanza",
+    image: "",
+    items: [
+      {
+        id: 1,
+        title: "Teak Block Wood",
+        description: "Premium teak block wood for luxury furniture.",
+        category: "Block Wood",
+        price: 4500,
+        brand: "WoodCraft",
+        thickness: "40mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 8,
+        rating: 4.9
+      },
+      {
+        id: 2,
+        title: "Oak Block Wood",
+        description: "Durable oak wood blocks for doors and flooring.",
+        category: "Block Wood",
+        price: 3900,
+        brand: "OakHouse",
+        thickness: "35mm",
+        dimensions: { width: "7ft", height: "3.5ft" },
+        stock: 12,
+        rating: 4.7
+      },
+      {
+        id: 3,
+        title: "Sheesham Block Wood",
+        description: "Traditional Indian sheesham wood, ideal for carvings.",
+        category: "Block Wood",
+        price: 3200,
+        brand: "Heritage Woods",
+        thickness: "30mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 15,
+        rating: 4.6
+      },
+      {
+        id: 4,
+        title: "Rosewood Block",
+        description: "Exotic rosewood blocks with premium polish finish.",
+        category: "Block Wood",
+        price: 5200,
+        brand: "RoseCraft",
+        thickness: "45mm",
+        dimensions: { width: "7ft", height: "3ft" },
+        stock: 6,
+        rating: 4.8
+      },
+      {
+        id: 5,
+        title: "Maple Block Wood",
+        description: "Lightweight maple blocks for cabinets and shelves.",
+        category: "Block Wood",
+        price: 2800,
+        brand: "MaplePro",
+        thickness: "28mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 20,
+        rating: 4.4
+      },
+      {
+        id: 6,
+        title: "Pine Block Wood",
+        description: "Affordable pine blocks with smooth finish.",
+        category: "Block Wood",
+        price: 2100,
+        brand: "PineWorld",
+        thickness: "25mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 25,
+        rating: 4.3
+      },
+      {
+        id: 7,
+        title: "Walnut Block Wood",
+        description: "Rich walnut blocks for luxury interiors.",
+        category: "Block Wood",
+        price: 4800,
+        brand: "WalnutWorks",
+        thickness: "40mm",
+        dimensions: { width: "7ft", height: "3ft" },
+        stock: 10,
+        rating: 4.9
+      },
+      {
+        id: 8,
+        title: "Acacia Block Wood",
+        description: "Sturdy acacia wood with rustic appeal.",
+        category: "Block Wood",
+        price: 2600,
+        brand: "AcaciaArt",
+        thickness: "32mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 18,
+        rating: 4.5
+      },
+      {
+        id: 9,
+        title: "Mahogany Block Wood",
+        description: "Classic mahogany blocks for traditional furniture.",
+        category: "Block Wood",
+        price: 5000,
+        brand: "MahaWood",
+        thickness: "38mm",
+        dimensions: { width: "7ft", height: "3ft" },
+        stock: 9,
+        rating: 4.8
+      },
+      {
+        id: 10,
+        title: "Bamboo Block Panels",
+        description: "Eco-friendly bamboo blocks for modern interiors.",
+        category: "Block Wood",
+        price: 2200,
+        brand: "BambooLiving",
+        thickness: "22mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 22,
+        rating: 4.6
+      }
+    ]
+  }
+
+  // 👉 Same structure continues for:
+  // particleBoard, luxuryVeneers, mdfInnovation, laminates
+};
