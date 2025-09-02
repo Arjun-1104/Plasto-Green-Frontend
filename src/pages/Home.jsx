@@ -6,6 +6,7 @@ import CustomerReview from '../components/CustomerReview'
 import PreFooter from '../components/PreFooter'
 import Product from '../components/Product'
 import ProductItem from '../components/ProductItem'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (

@@ -70,7 +70,7 @@ export const productBannerImages = [
   },
   {
     id: 2,
-    name: 'bonanza',
+    name: 'blockWood',
     image: productBanner2,
   },
   {

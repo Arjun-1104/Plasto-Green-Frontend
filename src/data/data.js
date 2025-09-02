@@ -1,6 +1,20 @@
 import { mainBannerImages, reactIcons } from "../assets/assets";
 const {mainBannerImage1,mainBannerImage2,mainBannerImage3,mainBannerImage4} = mainBannerImages
 const {TruckIcon, ServiceIcon, BankNoteIcon, ReplaceIcon} = reactIcons;
+import { assets } from "../assets/assets";
+const  {
+  ply1,
+  ply2,
+  ply3,
+  ply4,
+  ply5,
+  ply6,
+  ply7,
+  ply8,
+  ply9,
+  ply10,
+  ply1flip,
+} = assets;
 
 export const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -9,32 +23,33 @@ export const navigation = [
   { name: 'About', href: '/about', current: false },
 ]
 
+// change images to user image
 export const customerReviews = [
   {
     image: mainBannerImage1,
     review:
-      "Amazing service! The product quality was beyond expectations and delivery was on time.",
+      " Amazing service! The product quality was beyond expectations and delivery was on t Amazing service! The product quality was beyond expectations and delivery was on time. ime.",
     name: "John Smith",
     rating: 5,
   },
   {
     image: mainBannerImage2,
     review:
-      "Very satisfied with the experience. Customer support was friendly and helpful.",
+      "Very satisfied with the experience. Customer support was friendly and helpful. Amazing service! The product quality was beyond expectations and delivery was on time.",
     name: "Sophia Johnson",
     rating: 4,
   },
   {
     image: mainBannerImage3,
     review:
-      "Good quality overall, but packaging could have been better. Still happy with my order.",
+      "Good quality overall, but packaging could have been better. Still happy with my order. Amazing service! The product quality was beyond expectations and delivery was on time.",
     name: "Michael Lee",
     rating: 4,
   },
   {
     image: mainBannerImage4,
     review:
-      "Absolutely loved it! I will definitely recommend this to my friends and family.",
+      "Absolutely loved it! I will definitely recommend this to my friends and family. Amazing service! The product quality was beyond expectations and delivery was on time.",
     name: "Emma Wilson",
     rating: 5,
   },
@@ -43,25 +58,25 @@ export const customerReviews = [
 
 export const preFooterData = [
   {
-    Image: TruckIcon,
+    image: TruckIcon,
     name: "Fast Delivery",
     description:
       "I was impressed with the quick delivery and the quality of the product. Everything was well-packed and exceeded my expectations.",
   },
   {
-    Image: ServiceIcon,
+    image: ServiceIcon,
     name: "Customer Service",
     description:
       "The service was professional and smooth from start to finish. Customer support was very responsive and guided me clearly.",
   },
   {
-    Image: BankNoteIcon,
+    image: BankNoteIcon,
     name: "No Hidden Cost",
     description:
       "Very satisfied with my purchase. The product feels premium, and the price was affordable compared to other options online.",
   },
   {
-    Image: ReplaceIcon,
+    image: ReplaceIcon,
     name: "Replace Guarantee",
     description:
       "Excellent experience! The team kept me updated throughout, and I received exactly what I ordered without any issues.",
@@ -72,10 +87,11 @@ export const data = {
   plywood: {
     id: 1,
     title: "Plywood",
-    image: "",
+    image: mainBannerImage1,
     items: [
       {
         id: 1,
+        image: ply1,
         title: "Premium Marine Plywood",
         description: "Water-resistant marine grade plywood ideal for outdoor furniture and boat building.",
         category: "Plywood",
@@ -88,6 +104,8 @@ export const data = {
       },
       {
         id: 2,
+                image : ply2,
+
         title: "Commercial Plywood",
         description: "High-strength plywood for office furniture, partitions, and paneling.",
         category: "Plywood",
@@ -100,6 +118,8 @@ export const data = {
       },
       {
         id: 3,
+                image : ply3,
+
         title: "Decorative Veneer Plywood",
         description: "Premium decorative plywood with fine veneer finish for interior designs.",
         category: "Plywood",
@@ -112,6 +132,8 @@ export const data = {
       },
       {
         id: 4,
+                image : ply4,
+
         title: "Shuttering Plywood",
         description: "Durable shuttering plywood suitable for construction and concrete formwork.",
         category: "Plywood",
@@ -124,6 +146,8 @@ export const data = {
       },
       {
         id: 5,
+                image : ply4,
+
         title: "Waterproof Plywood",
         description: "Waterproof plywood perfect for modular kitchens and bathrooms.",
         category: "Plywood",
@@ -136,6 +160,8 @@ export const data = {
       },
       {
         id: 6,
+                image : ply4,
+
         title: "Calibrated Plywood",
         description: "Smooth finish calibrated plywood for uniform thickness and durability.",
         category: "Plywood",
@@ -148,6 +174,8 @@ export const data = {
       },
       {
         id: 7,
+                image : ply4,
+
         title: "Structural Plywood",
         description: "High-load bearing structural plywood for heavy-duty applications.",
         category: "Plywood",
@@ -160,6 +188,8 @@ export const data = {
       },
       {
         id: 8,
+                image : ply4,
+
         title: "Flexible Plywood",
         description: "Bendable plywood used for curved furniture and creative designs.",
         category: "Plywood",
@@ -172,6 +202,8 @@ export const data = {
       },
       {
         id: 9,
+                image : ply4,
+
         title: "Fire Retardant Plywood",
         description: "Fire-resistant plywood for safety in commercial and residential spaces.",
         category: "Plywood",
@@ -184,6 +216,8 @@ export const data = {
       },
       {
         id: 10,
+                image : ply4,
+
         title: "Eco-friendly Plywood",
         description: "Environmentally safe plywood made from sustainable resources.",
         category: "Plywood",
@@ -200,10 +234,11 @@ export const data = {
   blockWood: {
     id: 2,
     title: "Block Wood Bonanza",
-    image: "",
+    image: mainBannerImage2,
     items: [
       {
         id: 1,
+                image : ply4,
         title: "Teak Block Wood",
         description: "Premium teak block wood for luxury furniture.",
         category: "Block Wood",
@@ -216,6 +251,8 @@ export const data = {
       },
       {
         id: 2,
+                image : ply4,
+
         title: "Oak Block Wood",
         description: "Durable oak wood blocks for doors and flooring.",
         category: "Block Wood",
@@ -228,6 +265,8 @@ export const data = {
       },
       {
         id: 3,
+                image : ply4,
+
         title: "Sheesham Block Wood",
         description: "Traditional Indian sheesham wood, ideal for carvings.",
         category: "Block Wood",
@@ -240,6 +279,8 @@ export const data = {
       },
       {
         id: 4,
+                image : ply4,
+
         title: "Rosewood Block",
         description: "Exotic rosewood blocks with premium polish finish.",
         category: "Block Wood",
@@ -252,6 +293,8 @@ export const data = {
       },
       {
         id: 5,
+                image : ply4,
+
         title: "Maple Block Wood",
         description: "Lightweight maple blocks for cabinets and shelves.",
         category: "Block Wood",
@@ -264,6 +307,8 @@ export const data = {
       },
       {
         id: 6,
+                image : ply4,
+
         title: "Pine Block Wood",
         description: "Affordable pine blocks with smooth finish.",
         category: "Block Wood",
@@ -276,6 +321,8 @@ export const data = {
       },
       {
         id: 7,
+                image : ply4,
+
         title: "Walnut Block Wood",
         description: "Rich walnut blocks for luxury interiors.",
         category: "Block Wood",
@@ -288,6 +335,8 @@ export const data = {
       },
       {
         id: 8,
+                image : ply4,
+
         title: "Acacia Block Wood",
         description: "Sturdy acacia wood with rustic appeal.",
         category: "Block Wood",
@@ -300,6 +349,8 @@ export const data = {
       },
       {
         id: 9,
+                image : ply4,
+
         title: "Mahogany Block Wood",
         description: "Classic mahogany blocks for traditional furniture.",
         category: "Block Wood",
@@ -312,6 +363,8 @@ export const data = {
       },
       {
         id: 10,
+                image : ply4,
+
         title: "Bamboo Block Panels",
         description: "Eco-friendly bamboo blocks for modern interiors.",
         category: "Block Wood",

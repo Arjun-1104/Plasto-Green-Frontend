@@ -13,8 +13,7 @@ const CustomerReview = () => {
     <div>
          <Swiper
         modules={[Pagination, Navigation,Autoplay]}
-        slidesPerView={1}
-        spaceBetween={30}
+        
         loop={true}
         pagination={{
           clickable: true,
@@ -25,12 +24,28 @@ const CustomerReview = () => {
             pauseOnMouseEnter: true, 
         }} 
         navigation={true}
+        slidesPerView={1.1}
+        breakpoints={{
+          640 : {
+            slidesPerView : 1.3
+          },
+          768 : {
+            slidesPerView: 1.4
+          },
+          1024 : {
+            slidesPerView : 1.9
+          },
+          1280 : {
+            slidesPerView : 2
+          }
+        }}
+        spaceBetween={10}
         className="mySwiper"
       >
          {customerReviews.map(({image, review, name, rating},i) => {
 
-        return <SwiperSlide key={i} className='p-8 py-15 bg-gray-100'>
-            <div className='pt-12  pb-5 relative flex flex-col items-center space-y-2 bg-white rounded-3xl overflow-visible shadow-md'>
+        return <SwiperSlide key={i} className=' p-8 py-15 bg-gray-100 mx-1'>
+            <div className='pt-12 px-5 sm:w-100 pb-5 relative mx-auto flex flex-col items-center space-y-2 bg-white rounded-3xl overflow-visible shadow-md'>
                 <div className='rounded-full w-20 h-20  p-1 absolute -top-10 left-1/2 -translate-x-1/2  bg-white'>
                     <img src={image} alt="slide1" className="object-cover w-full h-full rounded-full"/>
                 </div>

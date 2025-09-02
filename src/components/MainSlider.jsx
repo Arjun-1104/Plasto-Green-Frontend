@@ -25,13 +25,13 @@ const MainSlider = () => {
             pauseOnMouseEnter: true, 
         }}
         
-        navigation={true}
-        className="mySwiper mt-16"
+        // navigation={true}
+        className="mySwiper mt-16 border h-60 sm:h-80 md:h-100 lg:h-120"
       >
-        <SwiperSlide><img src={slide1} alt="slide1" className="w-full h-60 object-cover"/></SwiperSlide>
-        <SwiperSlide><img src={slide2} alt="slide2" className="w-full h-60 object-cover"/></SwiperSlide>
-        <SwiperSlide><img src={slide3} alt="slide3" className="w-full h-60 object-cover"/></SwiperSlide>
-        <SwiperSlide><img src={slide4} alt="slide4" className="w-full h-60 object-cover"/></SwiperSlide>
+        <SwiperSlide><img src={slide1} alt="slide1" className="w-full h-full object-cover"/></SwiperSlide>
+        <SwiperSlide><img src={slide2} alt="slide2" className="w-full h-full object-cover"/></SwiperSlide>
+        <SwiperSlide><img src={slide3} alt="slide3" className="w-full h-full object-cover"/></SwiperSlide>
+        <SwiperSlide><img src={slide4} alt="slide4" className="w-full h-full object-cover"/></SwiperSlide>
       </Swiper>
     </>
   )
