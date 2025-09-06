@@ -1,28 +1,21 @@
 import React from 'react'
-import image from '../assets/images/plyBanner.png'
 import ProductCard from './ProductCard'
 import Banner from './Banner'
 import useAppStore from '../store/store'
 import ProductFilter from './ProductFilter'
-
-
+import defaultImage from '../assets/images/plyBanner.png'
 
 const Product = () => {
   const {displayData} = useAppStore();
   const {id,title,image,items} = displayData;
-  
+  console.log(id,title,image,items)
 
-    // let arr = [1,2,3,4,5,6,7]
   return (
     <div key={id}>
-    <Banner image={image} heading={title}></Banner>
+    <Banner image={(image? image: defaultImage) } heading={(title ? title : 'Product')}></Banner>
 
-    {/* <div className='w-full grid grid-cols-2 gap-5'>
-        {arr.map(()=> {
-            return <ProductCard />
-        })}
-    </div> */}
-    <ProductFilter itmes={items}></ProductFilter>
+   
+    <ProductFilter items={items}></ProductFilter>
     </div>
   )
 }

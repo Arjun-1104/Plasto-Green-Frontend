@@ -7,6 +7,7 @@ import {Link, useLocation} from 'react-router-dom'
 import useAppStore from '../store/store'
 import { useEffect } from 'react'
 import { FaUser } from "react-icons/fa";
+import {shallow} from 'zustand/shallow'
 const {SearchIcon, DownArrowIcon} = reactIcons;
 
 function classNames(...classes) {
@@ -14,18 +15,32 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const {activeNav, setActiveNav} = useAppStore();
   const location = useLocation();
 
+  const {activeNav, setActiveNav} = useAppStore()
+  //   activeNav : state.activeNav,
+  //   setActiveNav: state.setActiveNav,
+  // }),
+  //   shallow
+  // );
+  
   // sync zustand with url path
   useEffect(()=> {
-    // console.log(location)
-    if(location.pathname === "/") setActiveNav("Home")
-    else if(location.pathname.startsWith("/about")) setActiveNav("About")
-    else if(location.pathname.startsWith("/contact")) setActiveNav("Contact")
-    else if(location.pathname.startsWith("/products")) setActiveNav("products")
+    let path = location.pathname;
+    let newNav = "";
+    console.log(path)
+    if(path === "/") newNav = "Home";
+    else if(path.startsWith("/about")) newNav = "About";
+    else if(path.startsWith("/contact"))  newNav = "Contact";
+    else if(path.startsWith("/products")) newNav = "Products";
+   
+    if(newNav !== activeNav){
+      console.log(newNav, activeNav)
+      setActiveNav(newNav);
+    }
 
-  },[location, setActiveNav])
+  },[location.pathname,setActiveNav, activeNav])
+
 
   return (
    

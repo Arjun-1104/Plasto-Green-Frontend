@@ -70,12 +70,12 @@ export const productBannerImages = [
   },
   {
     id: 2,
-    name: 'blockWood',
+    name: 'blockboard',
     image: productBanner2,
   },
   {
     id: 3,
-    name: 'board',
+    name: 'particle board',
     image: productBanner3,
   },
   {
@@ -90,7 +90,34 @@ export const productBannerImages = [
   },
   {
     id: 6,
-    name: 'laminates',
+    name: 'laminate',
     image: productBanner6,
   }
 ];
+
+const folders = {
+    plywood: import.meta.glob('./images/plywood/*.{png,jpg}', {eager: true, import : 'default'}),
+    laminate: import.meta.glob('./images/laminate/*.{png,jpg}', {eager: true, import : 'default'}),
+    blockboard: import.meta.glob('./images/blockboard/*.{png,jpg}', {eager: true, import : 'default'}),
+    mdf: import.meta.glob('./images/mdf/*.{png,jpg}', {eager: true, import : 'default'}),
+    veneers: import.meta.glob('./images/veneers/*.{png,jpg}', {eager: true, import : 'default'}),
+    "particle board": import.meta.glob('./images/particle_board/*.{png,jpg}', {eager: true, import : 'default'}),
+
+}
+export function givePathTakeImamges(folder){
+  // console.log(path)
+  const image = folders[folder]
+  // console.log(image)
+  const imageObj = {};
+
+  for(const path in image){
+    const parts = path.split('/');
+    const filename = parts.pop();
+    const key = filename.split('.')[0];
+    imageObj[key] = image[path];
+  }
+  return imageObj;
+}
+
+
+

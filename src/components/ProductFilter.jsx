@@ -15,23 +15,23 @@ import {
 } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
-import { Link, useActionData } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import useAppStore from '../store/store'
 
 const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
+  // {id: 1, name: 'Most Popular', href: '#', current: true },
+  // {id: 2, name: 'Best Rating', href: '#', current: false },
+  // { name: 'Newest', href: '#', current: false },
+  {id: 3, name: 'Price: Low to High', href: '#', current: false },
+  {id: 4, name: 'Price: High to Low', href: '#', current: false },
 ]
-const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
-]
+// const subCategories = [
+//   { name: 'Totes', href: '#' },
+//   { name: 'Backpacks', href: '#' },
+//   { name: 'Travel Bags', href: '#' },
+//   { name: 'Hip Bags', href: '#' },
+//   { name: 'Laptop Sleeves', href: '#' },
+// ]
 const filters = [
   {
     id: 'color',
@@ -39,33 +39,32 @@ const filters = [
     options: [
       { value: 'white', label: 'White', checked: false },
       { value: 'beige', label: 'Beige', checked: false },
-      { value: 'blue', label: 'Blue', checked: true },
+      { value: 'blue', label: 'Blue', checked: false },
       { value: 'brown', label: 'Brown', checked: false },
       { value: 'green', label: 'Green', checked: false },
       { value: 'purple', label: 'Purple', checked: false },
     ],
   },
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
-    ],
-  },
+  // {
+  //   id: 'category',
+  //   name: 'Category',
+  //   options: [
+  //     { value: 'new-arrivals', label: 'New Arrivals', checked: false },
+  //     { value: 'sale', label: 'Sale', checked: false },
+  //     { value: 'travel', label: 'Travel', checked: false },
+  //     { value: 'organization', label: 'Organization', checked: false },
+  //     { value: 'accessories', label: 'Accessories', checked: false },
+  //   ],
+  // },
   {
     id: 'size',
     name: 'Size',
     options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
+      { value: '6x4', label: '6x4', checked: false },
+      { value: '7x4', label: '7x4', checked: false },
+      { value: '8x4', label: '8x4', checked: false },
+      { value: '8x6', label: '8x6', checked: false },
+      { value: '9x6', label: '9x6', checked: false },
     ],
   },
 ]
@@ -74,9 +73,29 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ProductFilter() {
-  const {displayData} = useAppStore();
-  console.log(displayData)
+
+
+export default function ProductFilter({items}) {
+  console.log(items)
+
+  const {setSorting,displayData} = useAppStore();
+  function activeSort(id){
+    let sortItems = [];
+    switch(id) {
+      case 3: {
+        items = displayData.items.sort((a,b)=> a.price - b.price )
+        break;
+      }
+      case 4: {
+        items = displayData.items.sort((a,b)=> b.price - a.price )
+        break;
+      }
+    }
+    setSorting(sortItems)
+  }
+  
+
+  // console.log(displayData)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   return (
     <div className="bg-white">
@@ -108,7 +127,7 @@ export default function ProductFilter() {
 
               {/* Filters */}
               <form className="mt-4 border-t border-gray-200">
-                <h3 className="sr-only">Categories</h3>
+                {/* <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="px-2 py-3 font-medium text-gray-900">
                   {subCategories.map((category) => (
                     <li key={category.name}>
@@ -117,7 +136,7 @@ export default function ProductFilter() {
                       </a>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
                 {filters.map((section) => (
                   <Disclosure key={section.id} as="div" className="border-t border-gray-200 px-4 py-6">
@@ -209,6 +228,7 @@ export default function ProductFilter() {
                             option.current ? 'font-medium text-gray-900' : 'text-gray-500',
                             'block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden',
                           )}
+                          onClick={()=> activeSort(option.id)}
                         >
                           {option.name}
                         </a>
@@ -241,14 +261,21 @@ export default function ProductFilter() {
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
               <form className="hidden lg:block">
-                <h3 className="sr-only">Categories</h3>
+                {/* <h3 className="sr-only">Categories</h3>
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
                   {subCategories.map((category) => (
                     <li key={category.name}>
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
+                <div className='flex items-center justify-between border-b border-gray-200 py-6'>
+                  <span className="font-medium text-sm text-gray-900">In stock only</span>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer"/>
+                    <div class="w-9 h-5 bg-gray-200 hover:bg-gray-300 peer-focus:outline-0 peer-focus:ring-transparent rounded-full peer transition-all ease-in-out duration-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-neutral-800 hover:peer-checked:bg-neutral-700"></div>
+                  </label>
+                </div>
 
                 {filters.map((section) => (
                   <Disclosure key={section.id} as="div" className="border-b border-gray-200 py-6">
@@ -309,8 +336,8 @@ export default function ProductFilter() {
               </form>
 
               {/* Product grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 space-y-3">
-                {displayData.items.map((item)=> {
+              <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 space-y-3 border">
+                {(items ? items : displayData).map((item)=> {
                   return  <Link to="./productItem">
                     <div key={item.id} className="relative border p-2 group">
               <img

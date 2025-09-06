@@ -10,11 +10,12 @@ const ProductsBanner = () => {
     <div className="p-3 md:p-6 lg:p-10">
       <h1 className="text-xl font-semibold mb-5">Shop by Product</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 space-y-3 ">
+      
         {productBannerImages.map(({ id, name, image }) => {
+          // console.log(id)
           return (
-            <Link to={`./product`} onClick={()=> setDisplayData(name)}>
+            <Link key={id} to={`./product`} onClick={()=> setDisplayData(name)}>
               <div
-                key={id}
                 name={name}
                 className="border border-gray-200 w-full rounded-xl overflow-hidden"
                 
