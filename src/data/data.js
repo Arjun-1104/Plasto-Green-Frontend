@@ -97,7 +97,7 @@ export const data = {
         brand: "GreenPly",
         thickness: "18mm",
         dimensions: { width: "8ft", height: "4ft" },
-        stock: 12,
+        stock: 0,
         rating: 4.8,
       },
       {
@@ -374,69 +374,69 @@ export const data = {
       // },
     ],
   },
-  
- mdf: {
-  id: 3,
-  title: "MDF",
-  image: mainBannerImage3,
-  items: [
-    {
-      id: 1,
-      image: mdfImages.mdf1,
-      title: "Teak Block Wood",
-      description: "Premium teak block wood for luxury furniture.",
-      category: "Block Wood",
-      price: 4500,
-      brand: "WoodCraft",
-      thickness: "40mm",
-      dimensions: { width: "6ft", height: "3ft" },
-      stock: 8,
-      rating: 4.9,
-    },
-    {
-      id: 2,
-      image: mdfImages.mdf2,
-      title: "Oak Block Wood",
-      description: "Durable oak MDF panel for interior furniture.",
-      category: "Block Wood",
-      price: 4200,
-      brand: "WoodCraft",
-      thickness: "35mm",
-      dimensions: { width: "6ft", height: "3ft" },
-      stock: 5,
-      rating: 4.7,
-    },
-    // {
-    //   id: 3,
-    //   image: mdfImages.mdf3,
-    //   title: "Pine Block Wood",
-    //   description: "Lightweight pine MDF perfect for cabinetry.",
-    //   category: "Block Wood",
-    //   price: 4000,
-    //   brand: "WoodCraft",
-    //   thickness: "30mm",
-    //   dimensions: { width: "6ft", height: "3ft" },
-    //   stock: 10,
-    //   rating: 4.6,
-    // },
-    // {
-    //   id: 4,
-    //   image: mdfImages.mdf4,
-    //   title: "Mahogany Block Wood",
-    //   description: "High-quality mahogany MDF for luxury furniture.",
-    //   category: "Block Wood",
-    //   price: 4800,
-    //   brand: "WoodCraft",
-    //   thickness: "40mm",
-    //   dimensions: { width: "6ft", height: "3ft" },
-    //   stock: 3,
-    //   rating: 4.8,
-    // },
-  ]
-},
 
-laminate: {
-    id: 1,
+  mdf: {
+    id: 3,
+    title: "MDF",
+    image: mainBannerImage3,
+    items: [
+      {
+        id: 1,
+        image: mdfImages.mdf1,
+        title: "Teak Block Wood",
+        description: "Premium teak block wood for luxury furniture.",
+        category: "Block Wood",
+        price: 4500,
+        brand: "WoodCraft",
+        thickness: "40mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 8,
+        rating: 4.9,
+      },
+      {
+        id: 2,
+        image: mdfImages.mdf2,
+        title: "Oak Block Wood",
+        description: "Durable oak MDF panel for interior furniture.",
+        category: "Block Wood",
+        price: 4200,
+        brand: "WoodCraft",
+        thickness: "35mm",
+        dimensions: { width: "6ft", height: "3ft" },
+        stock: 5,
+        rating: 4.7,
+      },
+      // {
+      //   id: 3,
+      //   image: mdfImages.mdf3,
+      //   title: "Pine Block Wood",
+      //   description: "Lightweight pine MDF perfect for cabinetry.",
+      //   category: "Block Wood",
+      //   price: 4000,
+      //   brand: "WoodCraft",
+      //   thickness: "30mm",
+      //   dimensions: { width: "6ft", height: "3ft" },
+      //   stock: 10,
+      //   rating: 4.6,
+      // },
+      // {
+      //   id: 4,
+      //   image: mdfImages.mdf4,
+      //   title: "Mahogany Block Wood",
+      //   description: "High-quality mahogany MDF for luxury furniture.",
+      //   category: "Block Wood",
+      //   price: 4800,
+      //   brand: "WoodCraft",
+      //   thickness: "40mm",
+      //   dimensions: { width: "6ft", height: "3ft" },
+      //   stock: 3,
+      //   rating: 4.8,
+      // },
+    ],
+  },
+
+  laminate: {
+    id: 4,
     title: "Laminate",
     image: mainBannerImage1,
     items: [
@@ -584,7 +584,7 @@ laminate: {
   },
 
   veneers: {
-    id: 1,
+    id: 5,
     title: "Vanners",
     image: mainBannerImage1,
     items: [
@@ -732,7 +732,7 @@ laminate: {
   },
 
   particle_board: {
-    id: 1,
+    id: 6,
     title: "Particle Board",
     image: mainBannerImage1,
     items: [
@@ -878,9 +878,6 @@ laminate: {
       },
     ],
   },
-
-
-
 
   // 👉 Same structure continues for:
   // particleBoard, luxuryVeneers, mdfInnovation, laminates
