@@ -117,7 +117,27 @@ const useAppStore = create(
     },
 
     resetFillters: () => set({ inStock: false, colors: [], sizes: [] }),
-  }))
-);
+
+    searchFilter :  (value) => {
+      return set((state) => {
+    
+                if(value !== ''){
+                const filterItem = state.displayData.items.filter(({title})=> {
+
+                    let itemName = title;
+                    return itemName.toLowerCase().includes(value);
+    
+                })
+                console.log(filterItem)
+                state.displayData = {...state.displayData.items, items : filterItem}  
+                              // console.log(state.searchDisplayItems)
+              }
+            else{
+                state.displayData.items = []
+            }
+            })
+      
+              
+  }})))
 
 export default useAppStore;

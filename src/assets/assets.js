@@ -48,12 +48,13 @@ import mainBannerImage2 from "./images/mainBannerImage2.webp";
 import mainBannerImage3 from "./images/mainBannerImage3.jpeg";
 import mainBannerImage4 from "./images/mainBannerImage4.jpeg";
 
-export const mainBannerImages = {
-  mainBannerImage1: mainBannerImage1,
-  mainBannerImage2: mainBannerImage2,
-  mainBannerImage3: mainBannerImage3,
-  mainBannerImage4: mainBannerImage4,
-};
+export const mainBannerImages = [
+  { image : mainBannerImage1},
+ {image: mainBannerImage2},
+  {image: mainBannerImage3},
+  {image: mainBannerImage4}
+
+]
 
 import productBanner1 from "./images/productBanner1.jpg";
 import productBanner2 from "./images/productBanner2.jpg";

@@ -13,7 +13,7 @@ import plastoGreen from "/plastoGreen.png";
 import { reactIcons } from "../assets/assets/";
 import { Link, useLocation } from "react-router-dom";
 import useAppStore from "../store/store";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaUser } from "react-icons/fa";
 const { SearchIcon, DownArrowIcon } = reactIcons;
 
@@ -23,8 +23,17 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
-  const { activeNav, setActiveNav } = useAppStore();
+  const { activeNav, setActiveNav, displayData, searchFilter } = useAppStore();
+  const [searchOpen, setSearchOpen] = useState(false);
+  const inputValue = useRef(null);
 
+  const handleSearch = (value) => {
+
+    if (value === "") {
+      inputValue.current.value = "";
+    }
+    searchFilter(value.toLowerCase());
+  };
   useEffect(() => {
     let path = location.pathname;
     let newNav = "";
@@ -95,10 +104,64 @@ export default function Navbar() {
             {/* Search Icon */}
             <button
               type="button"
+              onClick={() => setSearchOpen(!searchOpen)}
               className="text-gray-500 hover:text-green-700"
             >
               <SearchIcon aria-hidden="true" className="size-6" />
             </button>
+
+             {/* Search Bar */}
+     {/* search box */}
+          {searchOpen && (
+            <div className="bg-neutral-50 rounded-xl fixed w-[95%] sm:w-[60%] md:w-[50%] lg:max-w-[500px] right-4 mx-auto h-[80%] top-20 p-5">
+              <div className="flex border-b-2 pb-1 w-full items-center gap-3 justify-between">
+                <input
+                  ref={inputValue}
+                  type="text"
+                  placeholder="value"
+                  value={inputValue?.current?.value}
+                  className=" w-full text-lg py-1 px-2  outline-none "
+                  onChange={() =>
+                    handleSearch(inputValue?.current?.value.trim())
+                  }
+                />
+                <div className="flex items-center justify-end gap-4 sm:gap-6">
+                  {displayData.items.length > 0 && (
+                    <p
+                      className=" cursor-pointer text-gray-600 text-lg font-semibold"
+                      onClick={() => handleSearch("")}
+                    >
+                      clear
+                    </p>
+                  )}
+                  <p
+                    className="text-3xl sm:text-4xl  cursor-pointer sm:font-semibold"
+                    onClick={() => setSearchOpen(false)}
+                  >
+                    &times;
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full space-y-3 mt-4 h-10/12 pt-4 overflow-y-auto">
+                {displayData.items.map(({ id, image, title, price }) => {
+                  return (
+                    <div key={title} className="flex w-full gap-6 cursor-pointer">
+                      <div className="w-[20%]">
+                        <img src={image} alt="image" className="" />
+                      </div>
+
+                      <div>
+                        <h2>{title}</h2>
+                        <p>{price}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
             {/* User Icon */}
             <button
               type="button"

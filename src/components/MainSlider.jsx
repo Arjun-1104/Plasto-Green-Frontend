@@ -7,12 +7,6 @@ import "swiper/css/scrollbar";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { mainBannerImages } from "../assets/assets";
 
-const {
-  mainBannerImage1: slide1,
-  mainBannerImage2: slide2,
-  mainBannerImage3: slide3,
-  mainBannerImage4: slide4,
-} = mainBannerImages;
 const MainSlider = () => {
   return (
     <>
@@ -30,36 +24,23 @@ const MainSlider = () => {
           pauseOnMouseEnter: true,
         }}
         // navigation={true}
-        className="mySwiper mt-16 h-60 sm:h-80 md:h-100 lg:h-120"
+        className="mySwiper mt-16 h-60 sm:h-80 md:h-96 lg:h-[480px]"
       >
-        <SwiperSlide>
-          <img
-            src={slide1}
-            alt="slide1"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={slide2}
-            alt="slide2"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={slide3}
-            alt="slide3"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src={slide4}
-            alt="slide4"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
+        {mainBannerImages.length > 0 ? (
+          mainBannerImages.map(({ image }, idx) => (
+            <SwiperSlide key={idx}>
+              <img
+                src={image}
+                alt={`slide${idx + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </SwiperSlide>
+          ))
+        ) : (
+          <SwiperSlide className="flex items-center justify-center  h-60 text-2xl text-gray-500">
+            No slides available.
+          </SwiperSlide>
+        )}
       </Swiper>
     </>
   );
